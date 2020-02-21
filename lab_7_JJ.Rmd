@@ -157,9 +157,16 @@ diss <- dist(wb_scaled, method = "euclidean", upper = TRUE)
 
 hc_complete <- hclust(diss, method = "complete")
 
-# Plot it:
+# Plot it in base R:
 
 plot(hc_complete)
+
+# Plot it in ggplot:
+
+ggdendrogram(hc_complete,
+             rotate = TRUE) +
+  theme_classic() +
+  labs(x = "Country")
 
 ```
 
